@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaStrategy Pro v2.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💊 M Drogarias</h1>
+            <p>Inteligência de Estoque e Lucratividade</p>
+        </header>
+
+        <section class="card">
+            <h3 id="formTitulo">Novo Cadastro</h3>
+            <input type="hidden" id="editIndex" value="-1">
+            
+            <div class="grid-form">
+                <input type="text" id="nome" placeholder="Medicamento">
+                
+                <select id="tipo">
+                    <option value="Ético">Ético (Referência)</option>
+                    <option value="Genérico">Genérico</option>
+                    <option value="Similar">Similar</option>
+                </select>
+
+                <select id="lab">
+                    <option value="Cimed">Cimed</option>
+                    <option value="Geolab">Geolab</option>
+                    <option value="Medley">Medley</option>
+                    <option value="Eurofarma">Eurofarma</option>
+                    <option value="EMS">EMS</option>
+                    <option value="Outro">Outro</option>
+                </select>
+
+                <input type="text" id="lote" placeholder="Lote">
+                <input type="number" id="qtd" placeholder="Qtd Cx">
+                <input type="number" id="custo" placeholder="Custo Unit. (R$)">
+                <input type="number" id="venda" placeholder="Venda Unit. (R$)">
+                <input type="date" id="validade">
+                
+                <div class="botoes-form">
+                    <button id="btnSalvar" onclick="salvar()">Salvar Medicamento</button>
+                    <button id="btnCancelar" onclick="cancelarEdicao()" style="display:none; background:#6c757d">Cancelar</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="dashboard">
+            <div class="mini-card">
+                <span>Prejuízo em Risco</span>
+                <h2 id="valorRisco">R$ 0,00</h2>
+            </div>
+            <div class="chart-container">
+                <canvas id="graficoVencimento"></canvas>
+            </div>
+        </div>
+
+        <input type="text" id="busca" onkeyup="buscar()" placeholder="🔍 Pesquisar por nome, laboratório, lote ou tipo...">
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medicamento / Lab</th>
+                        <th>Tipo</th>
+                        <th>Lote</th>
+                        <th>Estoque</th>
+                        <th>Vencimento</th>
+                        <th>🎯 Oferta Unitária</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

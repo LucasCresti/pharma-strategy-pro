@@ -1,0 +1,41 @@
+:root {
+    --primary: #004a8d;
+    --success: #28a745;
+    --danger: #dc3545;
+    --warning: #ff9800;
+    --generico: #f1c40f; /* Amarelo clássico dos genéricos */
+    --etico: #9b59b6;    /* Roxo para Éticos */
+}
+
+body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; margin: 0; padding: 20px; }
+.container { max-width: 1200px; margin: auto; }
+header { text-align: center; color: var(--primary); margin-bottom: 25px; }
+
+.card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 20px; }
+.grid-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; }
+input, select, button { padding: 12px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px; }
+
+.botoes-form { display: flex; gap: 10px; grid-column: span 2; }
+button { background: var(--primary); color: white; border: none; cursor: pointer; font-weight: bold; }
+
+.dashboard { display: grid; grid-template-columns: 1fr 2fr; gap: 20px; margin-bottom: 20px; }
+.mini-card { background: white; padding: 20px; border-radius: 12px; text-align: center; border-left: 8px solid var(--danger); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+
+.chart-container { background: white; padding: 15px; border-radius: 12px; height: 220px; }
+
+table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
+th { background: #eaeff2; padding: 15px; text-align: left; font-size: 13px; color: #333; }
+td { padding: 12px 15px; border-top: 1px solid #eee; font-size: 14px; }
+
+/* Badges Dinâmicas */
+.badge-tipo { padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; color: white; }
+.tipo-generico { background: var(--generico); color: black; }
+.tipo-etico { background: var(--etico); }
+.tipo-similar { background: #34495e; }
+
+.badge-lab { font-size: 11px; font-weight: bold; color: #555; display: block; margin-top: 4px; }
+
+.oferta-tag { background: #e8f5e9; color: #2e7d32; padding: 6px; border-radius: 5px; font-weight: bold; border: 1px dashed #2e7d32; text-align: center; }
+
+.btn-edit { background: #3498db; padding: 5px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; }
+.btn-del { background: var(--danger); padding: 5px 10px; font-size: 12px; border-radius: 4px; }
